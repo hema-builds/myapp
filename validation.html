@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name Validation</title>
+</head>
+<body>
+  <h2>Name Validation</h2>
+
+  <input type="text" id="name" placeholder="Enter your name">
+  <button onclick="validateName()">Check</button>
+
+  <p id="result"></p>
+
+  <script>
+    function validateName() {
+      let name = document.getElementById("name").value;
+      let namePattern = /^[A-Za-z ]+$/;
+
+      if (name === "") {
+        console.log("Name is required");
+        document.getElementById("result").innerText = "Name is required";
+      } else if (!namePattern.test(name)) {
+        console.log("Enter a valid name");
+        document.getElementById("result").innerText = "Enter a valid name";
+      } else {
+        console.log("Valid name");
+        document.getElementById("result").innerText = "Valid name";
+      }
+    }
+  </script>
+</body>
+</html>
